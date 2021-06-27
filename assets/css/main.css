@@ -3908,11 +3908,11 @@ cite {
 
 .button_back {
   color: #ffffff;
-  font-size: 1.1rem;
+  font-size: 1.8rem;
   text-decoration: none;
   font-style: italic;
   display: inline-block;
-  margin: 0.7rem 1rem;
+  margin: 1rem 1.2rem;
   padding-left: 0.5rem;
   font-weight: 700;
 }
@@ -3931,7 +3931,7 @@ cite {
 }
 
 .main_header {
-  padding: 2rem;
+  padding: 1rem 2rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3944,27 +3944,37 @@ cite {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #1c1c1c;
+  background-color: #202020;
   z-index: 1;
 }
 
 .main_header .logo {
   color: #ffffff;
   margin: 0;
-  font-size: 2rem;
+  float: left;
+  font-size: 1.6rem;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 520;
 }
 
-.main_header .logo span {
-  color: #c0334a;
-  font-weight: 400;
+.main_header .logo .image {
+  display: flex;
+  align-items: center;  /*垂直居中*/
 }
 
 .main_header nav a {
   color: #ffffff;
   text-decoration: none;
   margin-left: 2rem;
+  font-size: 1.2rem;
+}
+
+.main_header nav a:hover {
+  color: #fa5b5b;
+  text-decoration: none;
+  margin-left: 2rem;
+  font-size: 1.3rem;
+  font-weight: 520;
 }
 
 #banner {
@@ -3981,7 +3991,7 @@ cite {
 }
 
 #banner .content .title {
-  font-size: 3.5rem;
+  font-size: 4.6rem;
   margin: 0 0 1rem 0;
 }
 
@@ -4237,20 +4247,20 @@ cite {
 
 .copyright p {
   color: #ffffff;
-  font-size: 0.7rem;
+  font-size: 1rem;
   text-transform: uppercase;
   margin: 0;
 }
 
 .copyright a {
   text-decoration: none;
-  color: #c0334a;
+  color: #ffc443;
   -webkit-transition: all .35s ease-in-out;
   transition: all .35s ease-in-out;
 }
 
 .copyright a:hover {
-  color: rgba(192, 51, 74, 0.75);
+  color: rgba(116, 243, 65, 0.75);
 }
 
 .post_wrapper, .entry_content {
@@ -4369,8 +4379,8 @@ cite {
   display: inline-block;
   -webkit-border-radius: 50%;
           border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   overflow: hidden;
   margin-right: 2rem;
 }
@@ -4387,6 +4397,10 @@ cite {
   font-size: 1.5rem;
   margin-top: 0;
   color: #262626;
+}
+
+.author .author_info .author_subtitle2 {
+  margin: 0rem 3rem 2rem 3rem;
 }
 
 .author .author_info .author_title::before, .author .author_info .author_title::after {

@@ -1,4 +1,4 @@
-logo: 糖糖# add logo name
+logo: 糖糖的网站欢迎您!  ━(*｀∀´*)ノ # add logo name
 title: 糖糖的个人网站
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -7,28 +7,29 @@ description: > # this means to ignore newlines until "baseurl:"
 permalink: ':title/'
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hereTJZ.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-domain: "tjz.github.io"
+domain: "hereTJZ.github.io"
 
 # Banner settings
 video: mountains.mp4 # add banner video. Add your video file to the folder video
-banner-title: 嘿嘿嘿 # add banner title
-banner-desc: 你想要吗？？？？？？？？？？？？？？？？？？ # add banner description
+banner-title: GLAD TO MEET YOU! # add banner title
+banner-desc: 心里的火永远不要灭，哪怕别人只看得到烟~<br>心里的光永远不要暗，因为你不知道有谁会借此走出黑暗~ # add banner description
 
 # Author settings
 author-pic: face.jpg # your photo
 author-name: 唐建祯 # your name
-about-author: 工大小库里，yyds！！ # about author
+about-author: 路人皆知的工大小库里，yyds！！！ # about author
 email: 952158354@qq.com # your email
+qq: 952158354 # your qq
 phone: 13145659923 # your pnone number
 website: https://hereTJZ.github.io/ # you website
 
 # Social link
 google_url:    https://hereTJZ.github.io/ # add url link
-twitter_url:   # add url link
-instagram_url: # add url link
-pinterest_url: # add url link
-dribbble_url:  # add url link
-facebook_url:  # add url link
+twitter_url:   https://hereTJZ.github.io/ # add url link
+instagram_url: https://hereTJZ.github.io/ # add url link
+pinterest_url: https://hereTJZ.github.io/ # add url link
+dribbble_url:  https://hereTJZ.github.io/ # add url link
+facebook_url:  https://hereTJZ.github.io/ # add url link
 
 # Disqus
 discus_identifier: mr-brown # add your discus identifier.  Not your username.  To get this, register your forum here with a unique ID: https://disqus.com/admin/create/
@@ -48,6 +49,8 @@ markdown: kramdown
 plugins_dir:
   - jekyll-paginate
   - jekyll-sitemap
+
+plugins: [jekyll-paginate]
 
 gems:
   - jekyll-paginate

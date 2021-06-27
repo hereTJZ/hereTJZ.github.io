@@ -1,0 +1,75 @@
+---
+layout: post
+title: "JVM 底层原理"
+img: jvm.jpg # Add image post (optional)
+date: 2021-06-19 12:50:00 +0300
+description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+tag: [Java, Dubbo]
+---
+
+JVM分为三个主要子系统：
+# 一、类加载器子系统(Class Loader Subsystem)
+## （一）、加载阶段
+① 引导类加载器（Bootstrap Class Loader）
+② 扩展类加载器（Extension Class Loader）
+③ 系统类加载器（System Class Loader）
+**双亲委派机制**
+
+
+## （二）、链接阶段
+① 验证
+② 准备
+③ 解析
+
+
+## （三）、初始化阶段
+
+
+# 二、运行时数据区(Runtime Data Area)
+## （一）、PC寄存器 
+线程私有  指向当前的执行指令
+## （二）、栈（Java虚拟机栈）
+管运行    线程私有      执行每一个方法创建一个栈帧，为局部变量(表)、操作数等分配地址空间，一个方法从调用到完成，就是一个栈帧入栈出栈的过程。
+## （三）、堆（heap）   
+管存储    线程共享      最大
+new实例化的对象都在堆里分配空间、字符串常量池和static变量信息(java7之后在此)       有新生代、老年代，新生代中又分为1个 Eden 区域 和 2个 Survivor 区域。
+## （四）、方法区      
+线程共享
+包含运行时常量池     存储着被加载过的每一个类的信息(类的元数据)
+## （五）、本地方法栈    
+线程私有   作用同Java虚拟机栈，但是是用于执行 native 方法的栈空间
+
+
+![QQ图片20210524214504.png](https://cdn.nlark.com/yuque/0/2021/png/12854861/1621863919611-a79846c3-f1f1-44f1-a07d-9d343ca40020.png#align=left&display=inline&height=712&margin=%5Bobject%20Object%5D&name=QQ%E5%9B%BE%E7%89%8720210524214504.png&originHeight=712&originWidth=994&size=275814&status=done&style=none&width=994)
+
+
+# 三、执行引擎(Execution Engine）
+Java是半编译半解释型语言
+（一）编译器
+（二）解释器（JIT）
+
+
+# 四、垃圾回收（GC）
+
+- GC定义：由于内存空间有限，程序运行过程中可能出现内存溢出的情况，GC要及时把不再使用的对象清除，将内存空间释放出来
+- 作用域：**堆** 和 **方法区**
+- GC  roots：就是一组必须活跃的根引用集合。
+
+（一）垃圾回收算法
+① 垃圾标记阶段算法
+引用计数算法（不用了）
+可达性分析算法（GC Roots）
+② 垃圾清除阶段算法
+标记-清除算法
+标记-压缩算法
+复制算法
+分代收集算法
+分区算法
+
+
+（二）垃圾回收器
+① CMS收集器（低延迟）
+② Serial 收集器（串行回收）
+③ ParNew 收集器（并行回收）
+④ Parallel 收集器（程序吞吐量优先）
+# 

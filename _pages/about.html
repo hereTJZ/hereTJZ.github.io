@@ -1,10 +1,10 @@
 ---
 layout: default
-title: About
+title: 关于我
 permalink: /about/
 ---
 <section class="about">
-  <a href="{{site.baseurl}}/" class="button_back"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back</a>
+  <a href="{{site.baseurl}}/" class="button_back"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> 返回</a>
   <div class="about_box">
     <div class="author">
         <div class="author_image">
@@ -13,9 +13,24 @@ permalink: /about/
         <div class="author_info">
           <h2 class="author_title">{% if site.author-name %}{{site.author-name}}{% else %}Dwayne Newman{% endif %}</h2>
           <p class="author_subtitle">{% if site.about-author %}{{site.about-author}}{% else %}La croix godard blue bottle, vape iceland fingerstache cronut single-origin coffee lyft snackwave normcore small batch.{% endif %}</p>
-          <p class="author_subtitle">Brunch sustainable tote bag offal pitchfork, jean shorts readymade lomo poutine freegan sriracha palo santo fam hammock.</p>
+          <p class="author_subtitle2">
+            一名即将迈向社会的大学生，几年大学生活造就的一个德、智、体、美、劳全面发展的复合型人才。<br>是著名酒后行为艺术家、国家特级赖床锦标赛运动员、以及国家一级奶茶品鉴专家，曾荣获全国晚睡锦标赛冠军、国际擦边球大赛单打冠军、世界级抬杠竞赛特等奖~
+          </p>
+          <a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin={{site.qq}}">
+            <button onclick="tip" style="width: 150px;
+                                          height: 46px;
+                                          color: #ffffff;
+                                          background: #f88764;
+                                          font-family: 微软雅黑;
+                                          text-align: center;
+                                          font-weight: bolder;
+                                          font-size: 14px;
+                                          border-radius: 8px; /*圆角*/">
+            认 识 我&gt;</button>
+          </a>
         </div>
       </div>
+      
 
       <div class="about_social">
         {% include social_footer.html %}

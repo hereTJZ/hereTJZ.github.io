@@ -1,0 +1,214 @@
+---
+layout: post
+title: "String类的不可变性"
+img: String.jpg # Add image post (optional)
+date: 2021-06-12 12:50:00 +0300
+description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+tag: [Java, 编程]
+---
+
+## 一、String相关概述
+
+
+在 Java 中字符串属于对象，String类位于java.lang包下，是Java语言的核心类。字符串相关的知识点有以下几点：
+
+
+- String不可变的特性
+- String常用的方法
+- String家族(StringBuilder、StringBuffer)
+- String正则表达式
+
+
+
+
+---
+
+> _在开始之前，梳理一下 java相关的基础的知识纲要：_
+
+
+
+1. Java历史
+1. 搭建环境JDK
+1. 源代码(.java)---->public class Test{main(String[] args)}     存储在硬盘上
+1. 编译成   字节码 (.class)
+1. 编译执行的原理 (硬盘 内存 ClassLoader类加载 分配 执行)
+1. 常量变量 (内存) 常量--值     变量--容器--内存空间--类型固定--一份--没有默认值
+
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/12854861/1616079035614-81b22ed3-bfff-4c7c-8b49-fe787ef239ea.png#align=left&display=inline&height=756&margin=%5Bobject%20Object%5D&name=image.png&originHeight=756&originWidth=1565&size=265183&status=done&style=stroke&width=1565)
+
+7. 数据类型 (基本数据类型、引用(句柄)数据类型)
+7. 语法结构 (分支 *循环)
+7. 数组使用 ([ ] 基本使用 引用 *内存 二维数组 对象数组)
+7. 面向对象编程思想 (类-属性 *方法 构造方法 代码块 对象)
+7. 类和类的关系 (has-a is-a use-a)
+7. 权限&特性 (protected 默认不写 static final)
+7. 抽象类 接口（ArrayBox LinkedBox 接口 抽象类 适配器模式 方法重载）
+7. 多态
+7. 工具类（数学相关Math、包装类Integer、日期相关Date Calendar、字符串相关String等)
+7. 集合类
+7. I/O 线程 反射 注解
+7. MVC分层思想 设计模式
+7. Swing扩展(面向对象 匿名内部类 事件)
+7. 综合小任务
+
+
+
+
+---
+
+**(一) 数据类型大分类**
+
+
+1. 基本数据类型（8个）：变量值直接保存赋给的值
+   - byte
+   - short
+   - int
+   - long
+   - float
+   - double
+   - char
+   - boolean
+
+---
+
+两者之间通过包装类间接转换
+
+---
+
+2. 引用数据类型（无数个）：变量值保存的是赋给值的地址
+   - String
+   - 类class：包括① 自定义 ② 别人写好(JDK提供很多写好的类 工具类)
+   - 数组[ ]：创建数组类型的对象，但不能描述数组这个类型
+   - 抽象类：abstract class (写法上类比class 思想上提取抽象)
+   - 接口：interface
+   - 枚举：enum
+   - 注解：@interface  @inherited 
+
+
+
+3. 定义变量
+数据类型 变量名字 [= 值];
+(常用的 int float boolean String)
+可能对后面数据类型之间的转换问题 理解不好啦
+int x = 10; 基本数据类型 值 常量区
+String y = "zzt"; 引用数据类型 对象"zzt" 字符串常量区
+看起来写法上甚至没区别
+
+
+
+5.String类有什么特点
+6.String类创建的对象有有什么特点
+7.String类中的好多方法
+(从别的父类中继承过来的equals hashCode compareTo 自己独有的)
+int[] array = new int[4];
+Person p = new Person();
+String s = new String("zzt");
+String s1 = "zzt";
+
+
+===========================================================================
+
+
+总结一下我们重新认识的String
+1.String是一个类("zzt"不是一个简单的常量 是一个对象)
+2.String是一个引用数据类型(与基本数据类型不能直接转化)
+3.String类是可以创建对象的
+String s = "zzt"; "zzt"其实不简单的是一个字符串 其实是一个对象 字符串常量区(单独的空间)
+String s = new String(); new 肯定是个对象
+String s = new String("zzt");
+*4.需要更深层次的理解
+关于String类创建对象的方式 有什么区别
+
+---
+
+首先String是一个类
+这个类不是我们写的
+翻看一下别人写的String到底如何描述
+类有没有什么特点
+类中有什么值得我们研究的属性 方法
+对象 拿来调用属性(存值 取值) 调用方法(执行)
+
+
+数组是个对象 存储的空间 地址连续 每一个"小格子"
+其他的对象就一定跟数组这个对象长得一样么???
+
+
+人类--抽象的概念 阿拓老师---人类中一个具体的对象
+
+
+翻看一下String类的源代码
+1.String类是由public修饰的-----不特殊
+2.String类特殊 由final修饰的--特殊
+String这个类不能被其他子类所继承
+public class A extends String{} 不行
+可以理解为String这个类是个"太监" 没有儿子
+为什么String这个类的设计师当时要用final来修饰它呢?
+String类的设计就是为了帮我们处理/解决字符串的一些操作
+截取 拆分 找元素 变化
+觉得如上这些操作供你使用即可 不需要你来修改执行的过程
+
+
+```
+ final
+    是一个特征修饰符，final意思是：最后的 最终的
+    可以修饰：变量 属性 方法 类
+    1.变量 
+        变量是在栈内存中开辟的
+        如果没有赋值，变量中是不存在默认值的，变量没有赋值是不可以使用的！
+        用final修饰的变量：
+       			如果已经赋值，值不能再次发生改变啦
+        		如果没有赋值，就给一次赋值机会，之后不能再改了
+        这里的值指的是(① 基本数据类型：值    ② 引用数据类型：地址)
+        例子：
+        		final int a = 10;	 a = 20;不行
+        		int[] a = new int[2]; 	a[0] = 10;(可以)   a = new int[3];(不行)
+    2.属性(类中的变量)
+        跟变量特点一样，用final修饰的变量，只允许赋值一次
+        类属性存储在堆内存的对象空间里的，堆内存中对象空间的属性是存在默认值的！
+        final修饰时，要求类属性必须赋初始值，或者通过构造方法为其赋值！
+    3.方法 
+        final修饰的方法不能被子类重写
+        隐含了一个知识，方法重写(override)：
+        		子类中函数名、参数列表都不能改变，只能改变方法体，返回值类型与原返回类型可以不相同，但是必须是父类返回值的派生类
+            重写方法不能抛出新的异常或比父类异常更宽泛的异常
+            重写方法访问权限不能比父类中被重写方法有更高的访问权限
+            声明为 final、static 的方法不能被重写
+            构造方法不能被重写
+        那方法重载(overload)呢：只要满足方法同名~
+						方法的参数类型，参数个不一样可以
+						方法的返回类型可以不相同
+						方法的修饰符可以不相同
+						其中，main 方法也可以被重载
+        重写和重载是多态的两种不同表现方式，①编译时多态（伪多态）和 ②运行时多态
+        方法重载是一个类的多态性表现（编译时多态）；
+        方法重写是子类与父类的一种多态性表现（运行时多态），父类引用变量可以指向子类对象（向上转型，向下强制转型），根据对象的具体类型不同决定调用什么形式的方法。
+        		利用多态性，可以使用子类对象去实例化父类接口 A a = new B();
+    4.类
+        final修饰的类表示此类不能被其他子类所继承
+
+
+3.String类没有继承别的类(默认继承Object)
+    但是它却实现(implements)了三个接口(规则)
+    java是单一继承，多实现的
+    Serializable	序列化(未来 对象的序列化和反序列化)
+    Comparable<String>	可比较(非常重要的方法compareTo 未来 Tree家族集合的时候)
+    CharSequence	字符序列(未来 其他类也遵循这个规则 之间可以互相变化)
+
+
+4.String是一个类
+    一定能创建一个String类型的对象
+    对象---->开辟内存空间
+    对象空间里面 一定存有自己的属性及方法
+        private final char value[];//JDK1.8   11  15
+        "zzt"对象中有一个属性  char[] = {'z','z','t'};
+    对象可以操作"zzt"	拆分 截取 替换 equals() 。。。。
+
+
+5.这个value属性里面有两个非常重要的修饰符
+    private
+    final------>
+    带来String类(对象)的不可变特性(长度 内容)
+    为何不可变???明天分解吧
+    真的不可变???其实是可以(反射reflect)
+```
+

@@ -1,0 +1,118 @@
+---
+layout: post
+title: "Java反射"
+img: 反射.jpg # Add image post (optional)
+date: 2021-06-06 12:50:00 +0300
+description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+tag: [Java, 编程]
+---
+
+## 一、反射概念
+**概念**：运行时动态的获取类内容以及动态调用对象的方法的机制称为**反射机制。**
+在Java程序运行状态中，对于任何一个类，在不知道这个类的属性和方法的情况下，对于给定的一个该类的对象，都能够获得并调用它的任意一个属性和方法。实际上，我们创建的每一个类也都是对象，即类本身是 java.lang.**Class **类的实例对象。
+
+- **反射机制涉及到的常用类**：
+| 类名 | 介绍 |
+| :---: | :---: |
+| Class | 封装类对象的类，表示运行程序中的类或接口 |
+| Field | 表示类的属性的类，在Class的基础上使用 |
+| Method | 表示类的方法的类，在Class的基础上使用 |
+| Constructor | 表示类的构造方法，在Class的基础上使用 |
+
+
+
+
+- **原理：**在程序运行阶段，主动让JVM去加载某个 .class 文件生成Class对象，然后调用其中的方法和属性
+
+**
+## 二、获取 Class 类对象的方法
+主要有以下三种方法获取Class类，其中通过类名称来获取的方法最常用
+
+- 通过**类名称**获取Class（使用最多）
+
+`Class.forName("package1.Hero")`  Class 的静态方法，其中参数为字符串类型，形如：**"包名.类名"**
+
+- 通过**类**获取Class（性能最优）
+
+`Hero.class`
+
+- 通过**实例对象**获取Class
+
+`new Hero().getClass()`
+
+
+![QQ图片20210416180239.png](https://cdn.nlark.com/yuque/0/2021/png/12854861/1618567373710-df68e2dc-224a-49ef-8ea5-9680b619f42e.png#align=left&display=inline&height=28&margin=%5Bobject%20Object%5D&name=QQ%E5%9B%BE%E7%89%8720210416180239.png&originHeight=48&originWidth=48&size=3649&status=done&style=none&width=28) 知识加油站
+*** **java的访问控制符与相关权限：
+
+|  | 同一类中 | 同一包中 | 子类中 | 全局 |
+| :---: | :---: | :---: | :---: | :---: |
+| private | √ |  |  |  |
+| **default（默认或不写时）** | √ | √ |  |  |
+| protected | √ | √ | √ |  |
+| public | √ | √ | √ | √ |
+
+
+
+## 三、获取 Field 类对象的方法
+Class类的方法：
+
+- **getDeclaredFields()**
+
+仅获取**自己**的所有声明属性，即包括public、private、proteced和默认类型，返回值类型为** Field数组**类型
+
+- **getFields()**
+
+获取**自己**和**父类**的所有**公有（public）**属性，返回值类型为** Field数组**类型
+
+---
+
+- **getDeclaredField(String fieldName)**
+- **getField(String fieldName)**
+
+末尾少了 's' ，但多了**参数**，获取规则同上，但只获取指定的已知名字的**单个Field对象**，不返回数组
+**
+**例子：**根据已获取到的Class类的实例对象classA
+
+## 四、获取 Method 类对象的方法
+Class类的方法：
+
+- **getDeclaredMethods()**
+
+仅获取**自己**的所有声明方法（不包括构造方法），返回值类型为** Method数组**类型
+
+- **getMethods()**
+
+获取**自己**和**父类**的所有**公有（public）**非构造方法，返回值类型为** Method数组**类型
+
+---
+
+- **getDeclaredMethod(String methodName, ****Class[] paramterTypes****)**
+- **getMethod(String methodName, ****Class[] paramterTypes****)**
+
+paramterTypes是Class类型的数组，包含了需获取的方法的参数列表**类型类**（例：int.class, String.class），也可在该方法中将 Class[] paramterTypes 部分替换成需获取的方法的 参数列表**类型类**（Class对象）
+末尾少了 's' ，但多了**参数**，获取规则同上，但只获取指定的已知名字、已知参数列表类型的**单个Method对象**，不返回数组
+**
+**例子：**根据已获取到的Class类的实例对象classA：
+
+## 五、获取 Constructor 类对象的方法
+Class类的方法：
+
+- **getDeclaredConstructors()**
+
+仅获取**自己**的所有声明构造方法，返回值类型为** ****Constructor****数组**类型
+
+- **getConstructors()**
+
+获取**自己**和**父类**的所有**公有（public）**非构造方法，返回值类型为** ****Constructor****数组**类型
+
+---
+
+- **getDeclared****Constructor****(****Class[] paramterTypes****)**
+- **get****Constructor****(****Class[] paramterTypes****)**
+
+
+尾少了 's' ，但多了**参数**，获取规则同上，但只获取指定的已知参数列表类型的**单个****Constructor****对象**，不返回数组
+
+**例子：**根据已获取到的Class类的实例对象classA：
+
+## 六、利用反射机制创建类实例
