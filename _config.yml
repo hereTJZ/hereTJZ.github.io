@@ -1,4 +1,4 @@
-logo: # add logo name
+logo: 糖糖# add logo name
 title: 糖糖的个人网站
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -6,7 +6,8 @@ description: > # this means to ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 permalink: ':title/'
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://tjz.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+domain: "tjz.github.io"
 
 # Banner settings
 video: mountains.mp4 # add banner video. Add your video file to the folder video
