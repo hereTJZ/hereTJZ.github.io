@@ -3952,7 +3952,7 @@ cite {
   color: #ffffff;
   margin: 0;
   float: left;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   text-decoration: none;
   font-weight: 520;
 }
@@ -3960,6 +3960,7 @@ cite {
 .main_header .logo .image {
   display: flex;
   align-items: center;  /*垂直居中*/
+  justify-content: left;
 }
 
 .main_header nav a {
