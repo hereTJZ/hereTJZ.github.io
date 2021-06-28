@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "String类的不可变性"
-img: String.jpg # Add image post (optional)
-date: 2021-06-12 12:50:00 +0300
+img: string.jpg # Add image post (optional)
+date: 2021-06-12 1时2:50:00 +0300
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 tag: [Java, 编程]
 ---
