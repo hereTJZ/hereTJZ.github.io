@@ -56,7 +56,7 @@ tag: [Java, Dubbo]
 | Monitor | 统计服务的调用次数和调用时间的监控中心 |
 | Container | 服务运行容器 |
 
-![](https://cdn.nlark.com/yuque/0/2021/png/12854861/1618372014481-0356c5f6-25fd-4138-833c-5d6232512d19.png#align=left&display=inline&height=453&margin=%5Bobject%20Object%5D&originHeight=824&originWidth=1060&size=0&status=done&style=none&width=583)<br />其实Dubbo的架构很简单，就像生产者-消费者模型，只是在这种模型上，加上了注册中心和监控中心，用于管理提供方提供的url，以及管理整个过程。
+![](https://img-blog.csdnimg.cn/img_convert/d5694df92930f0f379f6e730f3da010d.png#align=left&display=inline&height=453&margin=[object Object]&originHeight=824&originWidth=1060&size=0&status=done&style=none&width=583)<br />其实Dubbo的架构很简单，就像生产者-消费者模型，只是在这种模型上，加上了注册中心和监控中心，用于管理提供方提供的url，以及管理整个过程。
 <a name="Ff20K"></a>
 ### 调用执行过程：
 <br />

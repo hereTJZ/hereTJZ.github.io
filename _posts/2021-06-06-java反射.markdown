@@ -41,7 +41,7 @@ tag: [Java, 编程]
 `new Hero().getClass()`
 
 
-![QQ图片20210416180239.png](https://cdn.nlark.com/yuque/0/2021/png/12854861/1618567373710-df68e2dc-224a-49ef-8ea5-9680b619f42e.png#align=left&display=inline&height=28&margin=%5Bobject%20Object%5D&name=QQ%E5%9B%BE%E7%89%8720210416180239.png&originHeight=48&originWidth=48&size=3649&status=done&style=none&width=28) 知识加油站
+![QQ图片20210416180239.png](https://img-blog.csdnimg.cn/img_convert/0e1308f415cc9637e0f1ebbfa15283b3.png#align=left&display=inline&height=28&margin=[object Object]&name=QQ图片20210416180239.png&originHeight=48&originWidth=48&size=3649&status=done&style=none&width=28) 知识加油站
 *** **java的访问控制符与相关权限：
 
 |  | 同一类中 | 同一包中 | 子类中 | 全局 |
