@@ -1,23 +1,19 @@
----
-layout: default
-title: 关于我
-permalink: /about/
----
+--- layout: default title: 关于我 permalink: /about/ ---
 <section class="about">
-  <a href="{{site.baseurl}}/" class="button_back"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> 返回</a>
-  <div class="about_box">
-    <div class="author">
-        <div class="author_image">
-          <img src="{{site.baseurl}}/assets/img/{% if site.author-pic %}{{site.author-pic}}{% endif %}" alt="Author image">
-        </div>
-        <div class="author_info">
-          <h2 class="author_title">{% if site.author-name %}{{site.author-name}}{% else %}Dwayne Newman{% endif %}</h2>
-          <p class="author_subtitle">{% if site.about-author %}{{site.about-author}}{% else %}La croix godard blue bottle, vape iceland fingerstache cronut single-origin coffee lyft snackwave normcore small batch.{% endif %}</p>
-          <p class="author_subtitle2">
-            一名即将迈向社会的大学生，几年大学生活造就的一个德、智、体、美、劳全面发展的复合型人才。<br>是著名酒后行为艺术家、国家特级赖床锦标赛运动员、以及国家一级奶茶品鉴专家，曾荣获全国晚睡锦标赛冠军、国际擦边球大赛单打冠军、世界级抬杠竞赛特等奖~
-          </p>
-          <a class="qqlink" href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin={{site.qq}}">
-            <button onclick="tip" style="width: 150px;
+    <a href="{{site.baseurl}}/" class="button_back"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> 返回</a>
+    <div class="about_box">
+        <div class="author">
+            <div class="author_image">
+                <img src="{{site.baseurl}}/assets/img/{% if site.author-pic %}{{site.author-pic}}{% endif %}" alt="Author image">
+            </div>
+            <div class="author_info">
+                <h2 class="author_title">{% if site.author-name %}{{site.author-name}}{% else %}XXX{% endif %}</h2>
+                <p class="author_subtitle">{% if site.about-author %}{{site.about-author}}{% else %}XXXXXX{% endif %}</p>
+                <p class="author_subtitle2">
+                    一名即将迈向社会的大学生，几年大学生活造就的一个德、智、体、美、劳全面发展的复合型人才。<br>是著名酒后行为艺术家、国家特级赖床锦标赛运动员、以及国家一级奶茶品鉴专家，曾荣获全国晚睡锦标赛冠军、国际擦边球大赛单打冠军、世界级抬杠竞赛特等奖~
+                </p>
+                <a class="qqlink" href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin={{site.qq}}">
+                    <button onclick="tip" style="width: 150px;
                                           height: 46px;
                                           color: #ffffff;
                                           background: #f88764;
@@ -27,55 +23,56 @@ permalink: /about/
                                           font-size: 14px;
                                           border-radius: 8px; /*圆角*/">
             认 识 我&gt;</button>
-          </a>
+                </a>
+            </div>
         </div>
-      </div>
-      
 
-      <div class="about_social">
-        {% include social_footer.html %}
-      </div>
-    </div> <!-- End Section Author -->
+
+        <div class="about_social">
+            {% include social_footer.html %}
+        </div>
+    </div>
+    <!-- End Section Author -->
 </section>
 
 <script type="text/javascript">
-  var browser={
-      versions:function(){
-          var u = navigator.userAgent, app = navigator.appVersion;
-          //移动设备浏览器版本信息
-          return {
-              //IE内核
-              trident: u.indexOf('Trident') > -1,
-              //opera内核      
-              presto: u.indexOf('Presto') > -1,
-              //苹果、谷歌内核          
-              webKit: u.indexOf('AppleWebKit') > -1,
-              //火狐内核
-              gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,
-              //是否为移动终端
-              mobile: !!u.match(/AppleWebKit.*Mobile.*/), 
-              //ios终端
-              ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
-              //android终端或者uc浏览器
-              android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, 
-              //是否为iPhone或者QQHD浏览器
-              iPhone: u.indexOf('iPhone') > -1 , 
-              //是否iPad           
-              iPad: u.indexOf('iPad') > -1,
-              //是否web应该程序，没有头部与底部
-              webApp: u.indexOf('Safari') == -1
-          };
-      }(), 
-      language:(navigator.browserLanguage || navigator.language).toLowerCase()  
-  }   
+    var browser = {
+        versions: function() {
+            var u = navigator.userAgent,
+                app = navigator.appVersion;
+            //移动设备浏览器版本信息
+            return {
+                //IE内核
+                trident: u.indexOf('Trident') > -1,
+                //opera内核      
+                presto: u.indexOf('Presto') > -1,
+                //苹果、谷歌内核          
+                webKit: u.indexOf('AppleWebKit') > -1,
+                //火狐内核
+                gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,
+                //是否为移动终端
+                mobile: !!u.match(/AppleWebKit.*Mobile.*/),
+                //ios终端
+                ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+                //android终端或者uc浏览器
+                android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
+                //是否为iPhone或者QQHD浏览器
+                iPhone: u.indexOf('iPhone') > -1,
+                //是否iPad           
+                iPad: u.indexOf('iPad') > -1,
+                //是否web应该程序，没有头部与底部
+                webApp: u.indexOf('Safari') == -1
+            };
+        }(),
+        language: (navigator.browserLanguage || navigator.language).toLowerCase()
+    }
 
-  if(browser.versions.mobile || browser.versions.ios || browser.versions.android || browser.versions.iPhone || browser.versions.iPad){    
-      cssChange();     
-  }  
+    if (browser.versions.mobile || browser.versions.ios || browser.versions.android || browser.versions.iPhone || browser.versions.iPad) {
+        cssChange();
+    }
 
-  function cssChange(){
-      var a = document.getElementsByClassName('qqlink')[0];
-      a.setAttribute('href','https://qm.qq.com/cgi-bin/qm/qr?k=a_A1JdEMptI9iK0SDll6bRqe2Ts2_WbB&noverify=0');  
-  }
-  
+    function cssChange() {
+        var a = document.getElementsByClassName('qqlink')[0];
+        a.setAttribute('href', 'https://qm.qq.com/cgi-bin/qm/qr?k=a_A1JdEMptI9iK0SDll6bRqe2Ts2_WbB&noverify=0');
+    }
 </script>

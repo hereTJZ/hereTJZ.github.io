@@ -23,7 +23,7 @@ Maven是个项目管理和构建自动化工具，使用它通过依赖来管理
 - **clean**：项目清理的处理
 - **default(或 build)**：项目部署的处理
 
-![](https://cdn.nlark.com/yuque/0/2021/png/12854861/1622182481597-317bafd2-1865-4f7c-9794-d8ce7be1708b.png#align=left&display=inline&height=285&margin=%5Bobject%20Object%5D&originHeight=285&originWidth=840&size=0&status=done&style=none&width=840)
+![](https://img-blog.csdnimg.cn/img_convert/8a7f3e29dabf878ba4942f8c11fca706.png#align=left&display=inline&height=285&margin=[object Object]&originHeight=285&originWidth=840&size=0&status=done&style=none&width=840)
 
 - **site**：项目站点文档创建的处理
 

@@ -34,7 +34,7 @@ tag: [Java, 编程]
 1. 编译执行的原理 (硬盘 内存 ClassLoader类加载 分配 执行)
 1. 常量变量 (内存) 常量--值     变量--容器--内存空间--类型固定--一份--没有默认值
 
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/12854861/1616079035614-81b22ed3-bfff-4c7c-8b49-fe787ef239ea.png#align=left&display=inline&height=756&margin=%5Bobject%20Object%5D&name=image.png&originHeight=756&originWidth=1565&size=265183&status=done&style=stroke&width=1565)
+![image.png](https://img-blog.csdnimg.cn/img_convert/942e9ee0dc4ecfd9fbbeb7ba0ddafd63.png#align=left&display=inline&height=756&margin=[object Object]&name=image.png&originHeight=756&originWidth=1565&size=265183&status=done&style=stroke&width=1565)
 
 7. 数据类型 (基本数据类型、引用(句柄)数据类型)
 7. 语法结构 (分支 *循环)

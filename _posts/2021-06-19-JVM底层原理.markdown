@@ -40,7 +40,7 @@ new实例化的对象都在堆里分配空间、字符串常量池和static变�
 线程私有   作用同Java虚拟机栈，但是是用于执行 native 方法的栈空间
 
 
-![QQ图片20210524214504.png](https://cdn.nlark.com/yuque/0/2021/png/12854861/1621863919611-a79846c3-f1f1-44f1-a07d-9d343ca40020.png#align=left&display=inline&height=712&margin=%5Bobject%20Object%5D&name=QQ%E5%9B%BE%E7%89%8720210524214504.png&originHeight=712&originWidth=994&size=275814&status=done&style=none&width=994)
+![QQ图片20210524214504.png](https://img-blog.csdnimg.cn/img_convert/cbde51c23af678cd4e66c9fb0e2719c6.png#align=left&display=inline&height=712&margin=[object Object]&name=QQ图片20210524214504.png&originHeight=712&originWidth=994&size=275814&status=done&style=none&width=994)
 
 
 # 三、执行引擎(Execution Engine）
