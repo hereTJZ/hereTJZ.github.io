@@ -4,15 +4,7 @@ Bef - Blog Enjoy Freedom is a responsive jekyll theme which created to be simple
 
 ## Demo
 
-Check the theme in action [Demo](https://artemsheludko.github.io/bef/)
-
-The main page would look like this:
-
-![Main page preview](https://github.com/artemsheludko/bef/blob/master/assets/img/bef_main_page.jpg?raw=true)
-
-The post page would look like this:
-
-![Post page preview](https://github.com/artemsheludko/bef/blob/master/assets/img/bef_post.jpg?raw=true)
+Click here to see the post page [MyWebsite](https://heretjz.github.io/)
 
 ## Features
 
@@ -32,8 +24,3 @@ Fork the ``master`` branch and delete ``gh-pages`` branch in it. This is importa
 ## License
 
 GNU General Public License v3.0
-
-## Donate
-
-<p>If you like the themes that I create you can become my sponsor on <a href="https://www.patreon.com/artemsheludko" target="_blank">Patreon</a>.
-<p align="center"><b>Thank you for your support ❤️</b></p>
